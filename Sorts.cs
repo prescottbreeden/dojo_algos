@@ -22,8 +22,7 @@ namespace SortAlgos
     /// time an element is greater than the element following it in the array.
     /// </summary>
     /// <param name="arr">ref to an integer array</param>
-    /// <param name="time">O(n) --> O(n^2)</param>
-    /// <param name="average">O(n^2)</param>
+    /// <remarks>Time Complexity: O(n) --> O(n^2) || Average: O(n^2)</remarks>
     public static void Bubble(int[] arr)
     {
       bool sorted = false;
@@ -51,8 +50,7 @@ namespace SortAlgos
     /// repeating the task excluding all previously sorted elements.
     /// </summary>
     /// <param name="arr">ref to an integer array</param>
-    /// <param name="time">O(n^2)</param>
-    /// <param name="average">O(n^2)</param>
+    /// <remarks>Time Complexity: O(n^2) || Average: O(n^2)</remarks>
     public static void Selection(int[] arr)
     {
       int start = 0;
@@ -80,8 +78,7 @@ namespace SortAlgos
     /// left.
     /// </summary>
     /// <param name="arr">ref to an integer array</param>
-    /// <param name="time">O(n) --> O(n^2)</param>
-    /// <param name="average">O(n^2)</param>
+    /// <remarks>Time Complexity: O(n) --> O(n^2) || Average: O(n^2)</remarks>
     public static void Insertion(int[] arr)
     {
       int i;
