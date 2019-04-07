@@ -1,3 +1,4 @@
+'use strict'
 module.exports = {
   bubbleSort,
   selectionSort,
@@ -29,7 +30,7 @@ function bubbleSort(arr) {
 // -------------------- //
 function selectionSort(arr, start = 0, end = arr.length-1) {
   while (start < end) {
-    min = start;
+    let min = start;
     for (let i = start; i < arr.length; i++) {
       if (arr[i] < arr[min]) {
         min = i;
@@ -104,15 +105,15 @@ function merge(arr, start, mid, end) {
 // -------------------- //
 function quickSort(arr, low = 0, high = arr.length-1) {
   if (low < high) {
-    pivot = partition(arr, low, high);
+    let pivot = partition(arr, low, high);
     quickSort(arr, low, pivot-1);
     quickSort(arr, pivot+1, high);
   }
 }
 
 function partition(arr, low, high) {
-  pivot = arr[high];
-  swap = low-1;
+  let pivot = arr[high];
+  let swap = low-1;
   while (low < high) {
     if (arr[low] <= pivot) {
       swap++;
@@ -130,7 +131,7 @@ function partition(arr, low, high) {
 //      Swap Helper     //
 // -------------------- //
 function _swap(arr, idx1, idx2) {
-  temp = arr[idx1];
+  let temp = arr[idx1];
   arr[idx1] = arr[idx2];
   arr[idx2] = temp;
 }
