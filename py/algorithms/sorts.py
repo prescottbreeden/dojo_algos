@@ -58,9 +58,7 @@ def merge_sort(arr):
         merge_sort(arr1)
         merge_sort(arr2)
 
-        p1 = 0
-        p2 = 0
-        i = 0
+        i = p1 = p2 = 0
 
         while p1 < len(arr1) and p2 < len(arr2):
             if arr1[p1] < arr2[p2]:
