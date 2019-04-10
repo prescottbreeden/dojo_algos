@@ -74,50 +74,36 @@ e.g.
 
 '''
 
-def get_parent(heap, val):
-    idx = heap.index(val)
-    parent = int((idx) / 2)
-    print(heap[parent])
-    return parent
-
-def get_left(heap, val):
-    idx = heap.index(val)
-    left = int(2 * idx)
-    print(heap[left])
-    return left
-
-def get_right(heap, val):
-    idx = heap.index(val)
-    right = int(2 * idx + 1)
-    print(heap[right])
-    return right
-
-def max_heapify(arr, i):
-    left = 2 * i
-    right = 2 * i + 1
+def max_heapify(arr, n, i):
+    left = 2 * i + 1
+    right = 2 * i + 2
     largest = i
-    if left < len(arr) and arr[left] > arr[largest]:
+    if left < n and arr[left] > arr[largest]:
         largest = left
-    if right < len(arr) and arr[right] > arr[largest]:
+    if right < n and arr[right] > arr[largest]:
         largest = right
     if largest != i:
         swap(arr, i, largest)
-        max_heapify(arr, largest)
+        max_heapify(arr, n, largest)
 
 def build_max_heap(arr):
-    start = len(arr)//2
-    for i in range(start, 0, -1):
-        max_heapify(arr, i)
+    n = len(arr)
+    start = n//2
+    for i in range(start, -1, -1):
+        max_heapify(arr, n, i)
 
 def swap(arr, idx1, idx2):
     arr[idx1], arr[idx2] = arr[idx2], arr[idx1]
 
+def heap_sort(arr):
+    n = len(arr)
+    build_max_heap(arr)
+    for i in range(n-1, 0, -1):
+        swap(arr, i, 0)
+        max_heapify(arr, i, 0)
 
-max_heap = [0, 16, 14, 10, 8, 7, 9, 3, 2, 4, 1]
-# get_parent(max_heap, 9)
-# get_left(max_heap, 10)
-# get_right(max_heap, 14)
+max_heap = [16, 14, 10, 8, 7, 9, 3, 2, 4, 1]
 
-heap = [0, 1, 14, 10, 8, 17, 9, 13, 2, 4, 11]
-build_max_heap(heap)
+heap = [1, 14, 10, 8, 17, 9, 13, 2, 4, 11]
+heap_sort(heap)
 print(heap)
