@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using SLL;
 using SortAlgos;
-using heaps;
 using bst;
+using algos.graphs;
 
 namespace algos
 {
@@ -11,31 +11,24 @@ namespace algos
   {
     static void Main(string[] args)
     {
-      int[] bad = { 5, 42, 3, 0, 21, 10 };
-      Sorts.QuickSort(bad, 0, bad.Length - 1);
-      foreach (int num in bad)
-        System.Console.WriteLine(num);
+      // Graph bob = new Graph(5);
+      // bob.AddEdge(0, 1);
+      // bob.AddEdge(0, 4);
+      // bob.AddEdge(1, 2);
+      // bob.AddEdge(1, 3);
+      // bob.AddEdge(1, 4);
+      // bob.AddEdge(2, 3);
+      // bob.AddEdge(3, 4);
+      // bob.PrintGraph(bob);
 
-      var bob = new BinarySearchTree();
-      bob.Add(10);
-      bob.Add(12);
-      bob.Add(18);
-      bob.Add(42);
-      bob.Add(5);
-      bob.Add(8);
-      bool x = bob.Contains(42);
-      System.Console.WriteLine(x);
-      int size = bob.Size();
-      System.Console.WriteLine(size);
-      System.Console.WriteLine("----------------");
-      bob.Remove(10);
-      x = bob.Contains(42);
-      System.Console.WriteLine(x);
-      size = bob.Size();
-      System.Console.WriteLine(size);
-
-
-
+      Graph gunicorn = new Graph(6);
+      gunicorn.AddEdgeDirected(1, 3);
+      gunicorn.AddEdgeDirected(1, 5);
+      gunicorn.AddEdgeDirected(2, 1);
+      gunicorn.AddEdge(2, 3);
+      gunicorn.AddEdgeDirected(4, 2);
+      gunicorn.AddEdge(4, 5);
+      gunicorn.PrintGraph(gunicorn);
     }
   }
 }

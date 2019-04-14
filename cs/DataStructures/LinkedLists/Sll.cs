@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace SLL
 {
-  class Sll<T>
+  public class Sll<T>
   {
     Node<T> _head;
 

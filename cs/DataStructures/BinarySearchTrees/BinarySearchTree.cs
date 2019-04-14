@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 
 namespace bst
 {
   class BinarySearchTree
   {
     public BstNode Root { get; set; }
+
     public BinarySearchTree() { }
 
     public void Add(int val)
@@ -115,7 +117,29 @@ namespace bst
           runner = runner.Right;
         }
       }
-
     }
+    public void BSTtoArr(BstNode node, List<BstNode> nodes)
+    {
+      if (node != null)
+        return;
+
+      BSTtoArr(node.Left, nodes);
+      nodes.Add(node);
+      BSTtoArr(node.Right, nodes);
+    }
+
+    public BstNode BuildBST(List<BstNode> nodes, int start, int end)
+    {
+      if (start > end)
+        return null;
+
+      int mid = (start + end)/2;
+      BstNode node = nodes[mid];
+      node.Left = BuildBST(nodes, start, mid-1);
+      node.Right = BuildBST(nodes, mid+1, end);
+
+      return node;
+    }
+
   }
 }

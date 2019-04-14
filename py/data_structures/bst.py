@@ -35,15 +35,38 @@
 '''
 class Node:
     def __init__(self, val):
+        self.key = key
         self.value = val
-        self.parent = None
         self.right = None
         self.left = None
 
 class BST:
     def __init__(self):
         self.root = None
-
+    
     def add(self, val):
-        pass
+        if self.root is None:
+            self.root = Node(val)
+        runner = self.root
+        while (runner):
+            if val < runner.value:
+                if runner.left is None:
+                    return runner.left = Node(val)
+                runner = runner.left
+            if val > runner.value:
+                if runner.right is None:
+                    return runner.right = Node(val)
+                runner = runner.right
 
+    def r_add(self, val, node=self.root):
+        if node is None:
+            self.root = Node(val)
+        
+
+    def remove(self, val):
+        runner = self.root
+        while (runner):
+            if val < runner.value:
+                if runner.left.value == val:
+                    print('rubber baby buggy bumpers')
+                    
