@@ -112,6 +112,56 @@ class Stack():
         self.stack.testNodes()
 
 
+class Queue():
+    def __init__(self):
+        self.queue = SLL()
+
+    def enqueue(self, val):
+        self.queue.addBack(val)
+        return self
+
+    def dequeue(self):
+        return self.queue.removeFront
+
+
+class QueueStack():
+    def __init__(self):
+        self.s1 = Queue()
+        self.s2 = Queue()
+
+    def push(self, val):
+        if not self.s1.queue.head:
+            self.s1.enqueue(val)
+            return self
+        self._empty(self.s1.queue.head)
+        self.s1.enqueue(val)
+        self._fill(self.s2.queue.head)
+
+    def pop(self):
+        return self.s1.queue.removeFront()
+        
+    def _empty(self, node):
+        if not node:
+            return self
+        val = self.s1.dequeue
+        self.s2.enqueue(val)
+        self._empty(node.next)
+            
+
+    def _fill(self, node):
+        if not node:
+            return self
+        self.s1.enqueue(self.s2.dequeue)
+        return self._empty(node.next)
+
+    def print(self):
+        self.s1.queue.testNodes() 
+
 
 if __name__ == "__main__":
     # test code here
+    bob = QueueStack()
+    bob.push(1)
+    bob.push(2)
+    bob.push(3)
+    bob.s1.queue.testNodes()
