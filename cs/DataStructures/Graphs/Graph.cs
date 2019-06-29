@@ -21,6 +21,7 @@ namespace algos.graphs
       AdjListArray[src].AddLast(dest);
       AdjListArray[dest].AddLast(src);
     }
+
     public void AddEdgeDirected(int src, int dest)
     {
       AdjListArray[src].AddLast(dest);

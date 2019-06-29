@@ -7,8 +7,6 @@ namespace bst
   {
     public BstNode Root { get; set; }
 
-    public BinarySearchTree() { }
-
     public void Add(int val)
     {
       BstNode runner = this.Root;
