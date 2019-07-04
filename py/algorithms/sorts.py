@@ -81,7 +81,10 @@ def merge_sort(arr):
 
 
 def swap(arr, idx1, idx2):
-    temp = arr[idx1]
-    arr[idx1] = arr[idx2]
-    arr[idx2] = temp
+    arr[idx1], arr[idx2] = arr[idx2], arr[idx1]
 
+
+if __name__ == "__main__":
+    arr = [5, 4, 3, 2, 1]
+    merge_sort(arr)
+    print(arr)

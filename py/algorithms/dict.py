@@ -1,8 +1,6 @@
 people = [
     {
-    "first_name": "Bob",
-    "last_name": "Ross",
-    "email": "bob@gmail.com",
+    "name": "Bob Ross",
     "pets": [
         {
             "name": "Nick Furry",
@@ -16,8 +14,8 @@ people = [
                     "location": "Human lap"
                 },
                 {
-                    "activity": "Eating",
-                    "location": "Kitchen Counter"
+                    "activity": "Watching TV",
+                    "location": "Sofa"
                 }
             ]
         }
@@ -25,8 +23,9 @@ people = [
 }
 ]
 
-print(people[0]["pets"][0]["name"])
-# print all people names
-# print all pets belonging to Bob Ross
-# print all cats 
-# isFriendly(person, pet_name) => true or false
+if __name__ == "__main__":
+    print(people[0]["pets"][0]["name"])
+    # print all people names
+    # print all pets belonging to Bob Ross
+    # addPet(person, pet)
+    # isFriendly(person, pet_name) => true or false
