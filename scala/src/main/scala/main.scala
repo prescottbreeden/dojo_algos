@@ -35,10 +35,10 @@ object Main extends App {
     palHelper(test, 0, test.length-1)
   }
 
-  def isPrime(n: Int): Boolean = {
+  def isPrime(n: Long): Boolean = {
 
     @tailrec
-    def isPrimeUntil(t: Int): Boolean = {
+    def isPrimeUntil(t: Long): Boolean = {
       if (t <= 1) true
       else n % t != 0 && isPrimeUntil(t-1)
     }
@@ -55,7 +55,12 @@ object Main extends App {
   println(isPalindrome("bobba"))
   println(fibonacci(12))
   println(fibTail(50))
-  println(isPrime(11))
   println(isPrime(11 * 4))
+  println(isPrime(39916801))
+  val sll = new SLL()
+  println(sll.head)
+  val sll2 = sll.addFront(5)
+  val sll3 = sll.addFront(4)
+  println(sll3.head.value)
 
 }
