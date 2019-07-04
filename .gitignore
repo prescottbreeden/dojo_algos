@@ -2,3 +2,7 @@
 bin
 obj
 __pycache__
+.bloop
+.metals
+target
+
